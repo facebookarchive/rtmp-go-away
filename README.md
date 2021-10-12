@@ -1,8 +1,8 @@
 # RTMP Go Away
 
-[Real Time Messaging Protocol](https://www.adobe.com/content/dam/acom/en/devnet/rtmp/pdf/rtmp_specification_1.0.pdf) (RTMP) is a popular media streaming protocol that uses TCP persistent connections. When a connection between a live streaming client and the platform is interrupted, data from the live event is lost until the client can reconnect to a new server. **RTMP Go Away** is a new mechanism that allows for the live server to send a signal to the client indicating that it needs to terminate the existing connection. This allows the client to create a new connection at a logical media boundary, incurring zero data loss.
+[Real Time Messaging Protocol](https://www.adobe.com/content/dam/acom/en/devnet/rtmp/pdf/rtmp_specification_1.0.pdf) (RTMP) is a popular media streaming protocol that uses TCP persistent connections. When a connection between a live streaming client and the platform is interrupted, data from the live event is usually lost until the client can reconnect to a new server. **RTMP Go Away** is a new mechanism that allows for the live server to send a signal to the client indicating that it needs to terminate the existing connection. This allows the client to create a new connection at a logical media boundary, incurring zero data loss.
 
-The purpose of this repository is to provide the RTMP Specifications required to implement this feature in both streaming clients and live servers. Additionally, a reference client implementation in [FFmpeg](https://www.ffmpeg.org/) is provided.
+The purpose of this repository is to provide the RTMP Specifications required to implement this feature in both streaming clients and live servers. Additionally, a reference client implementation in [FFmpeg](https://www.ffmpeg.org/), see below.
 
 # Design Overview
 
@@ -35,6 +35,9 @@ Protocol Control Message {
 # Reference Implementation
 
 A working client implementation in FFmpeg is provided [here](https://patchwork.ffmpeg.org/project/ffmpeg/patch/20210926205201.1163-1-jordi.cenzano@gmail.com/) as reference. This patch has been submitted to FFmpeg for consideration and review.
+
+# References
+- [RTMP protocol specification](https://www.adobe.com/content/dam/acom/en/devnet/rtmp/pdf/rtmp_specification_1.0.pdf)
 
 # License
 
