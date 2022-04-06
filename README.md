@@ -41,4 +41,4 @@ A working client implementation in FFmpeg is provided [here](https://patchwork.f
 
 # License
 
-RTMP Go Awat is licensed under the [MIT license](LICENSE).
+RTMP Go Away is licensed under the [MIT license](LICENSE).
