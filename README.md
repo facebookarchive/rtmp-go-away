@@ -8,7 +8,7 @@ The purpose of this repository is to provide the RTMP Specifications required to
 
 1. The streaming client will announce to the server that it supports the new feature upon connection. This will be done by adding a field to the RTMP connect packet object. The live server will parse this new field on connection and save the result for later use.
 2. Before the live server shuts down (e.g. for maintenance) it sends a new RTMP Go Away packet to the client. The live server should only send the Go Away packet to clients that support the feature.
-3. Upon receiving the Go Away packet, the streaming client will wait until the next logical media boundry (e.g. IDR frame), disconnect and create a new connection to a new server. Once a new connection is established, the client can resume streaming from the logical boundry without experiencing any data loss.
+3. Upon receiving the Go Away packet, the streaming client will wait until the next logical media boundry (e.g. IDR frame), disconnect without the usual unpublish / deletestream teardown in order to facilitate reuse of the logical stream, and create a new connection to a new server. Once a new connection is established, the client can resume streaming from the logical boundry without experiencing any data loss.
 
 # RTMP Specification
 
